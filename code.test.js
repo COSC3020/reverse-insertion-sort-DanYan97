@@ -13,3 +13,4 @@ const testSort =
     });
 
 jsc.assert(testSort);
+console.log("All tests passed!");
