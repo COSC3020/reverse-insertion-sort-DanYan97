@@ -3,12 +3,12 @@
 Consider the code for insertion sort we covered in class:
 
 ```javascript
-function insertionSort(arr) {
-  for(var i = 1; i < arr.length; i++) {
+function insertionSortReverse(arr) {
+  for(var i = arr.length-2; i >= 0; i--) {
     var val = arr[i];
     var j;
-    for(j = i; j > 0 && arr[j-1] > val; j--) {
-      arr[j] = arr[j-1];
+    for(j = i; j < arr.length-1 && arr[j+1] < val; j++) {
+      arr[j] = arr[j+1];
     }
     arr[j] = val;
   }
@@ -36,3 +36,14 @@ constant factors.
 Describe your reasoning and the conclusion you've come to. Your reasoning is
 most important -- you can easily find the answer, but you need to demonstrate
 that you've understood the concept. Add your answer to this markdown file.
+
+The inner loop for each element, on average, it would be about i/2 times, becuase 
+about half of the elements before the current are larger and needs to be shifted. 
+Whereas the outer loop runs n times, once for each.Therefore, the time complexity
+can be represented as n^2/2. The constant 1/2 can be ignored, so the average case 
+ time complexity would be ($\Theta(n^2)$)
+
+ “I certify that I have listed all sources used to complete this exercise, including 
+ the use of any Large Language Models. All of the work is my own, except where stated 
+ otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism 
+ is suspected, charges may be filed against me without prior notice.” --Doris Yan
